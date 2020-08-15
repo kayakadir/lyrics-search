@@ -9,7 +9,7 @@ const apiURL = 'https://api.lyrics.ovh';
 async function searchSongs(term) {
   const res = await fetch(`${apiURL}/suggest/${term}`);
   const data = await res.json();
-  console.log(data);
+  //console.log(data);
   showData(data);
 }
 
@@ -73,7 +73,6 @@ result.addEventListener('click', e => {
   if (clickedEl.tagName === 'BUTTON') {
     const artist = clickedEl.getAttribute('data-artist');
     const songTitle = clickedEl.getAttribute('data-songtitle');
-    console.log(artist, songTitle)
     getLyrics(artist, songTitle);
   }
 });
